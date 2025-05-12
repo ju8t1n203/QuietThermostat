@@ -24,6 +24,7 @@ Partial Class AboutForm
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AboutForm))
         Me.AboutLabel = New System.Windows.Forms.Label()
+        Me.CloseButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'AboutLabel
@@ -36,13 +37,24 @@ Partial Class AboutForm
         Me.AboutLabel.TabIndex = 0
         Me.AboutLabel.Text = resources.GetString("AboutLabel.Text")
         '
+        'CloseButton
+        '
+        Me.CloseButton.Location = New System.Drawing.Point(668, 354)
+        Me.CloseButton.Name = "CloseButton"
+        Me.CloseButton.Size = New System.Drawing.Size(120, 84)
+        Me.CloseButton.TabIndex = 1
+        Me.CloseButton.Text = "&Close"
+        Me.CloseButton.UseVisualStyleBackColor = True
+        '
         'AboutForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.CloseButton)
         Me.Controls.Add(Me.AboutLabel)
         Me.Name = "AboutForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "AboutForm"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -50,4 +62,5 @@ Partial Class AboutForm
     End Sub
 
     Friend WithEvents AboutLabel As Label
+    Friend WithEvents CloseButton As Button
 End Class
