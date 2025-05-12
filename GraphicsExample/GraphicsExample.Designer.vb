@@ -37,16 +37,15 @@ Partial Class QuietThermostat
         Me.CurrentTempLabel = New System.Windows.Forms.Label()
         Me.SetTempLabel = New System.Windows.Forms.Label()
         Me.TargetTempMeter = New System.Windows.Forms.TrackBar()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.DILabel = New System.Windows.Forms.Label()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.FanLabel = New System.Windows.Forms.Label()
         Me.TimeDateStatusStrip = New System.Windows.Forms.StatusStrip()
         Me.TimenDateStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TopMenuStrip.SuspendLayout()
         CType(Me.TargetTempMeter, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TimeDateStatusStrip.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SerialPort
@@ -138,15 +137,6 @@ Partial Class QuietThermostat
         Me.TargetTempMeter.TickStyle = System.Windows.Forms.TickStyle.None
         Me.TargetTempMeter.Value = 48
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(520, 27)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(268, 193)
-        Me.PictureBox1.TabIndex = 4
-        Me.PictureBox1.TabStop = False
-        '
         'DILabel
         '
         Me.DILabel.AutoSize = True
@@ -155,14 +145,6 @@ Partial Class QuietThermostat
         Me.DILabel.Size = New System.Drawing.Size(51, 13)
         Me.DILabel.TabIndex = 5
         Me.DILabel.Text = "Digital In:"
-        '
-        'ListBox1
-        '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(276, 154)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(196, 264)
-        Me.ListBox1.TabIndex = 6
         '
         'FanLabel
         '
@@ -188,6 +170,15 @@ Partial Class QuietThermostat
         Me.TimenDateStatusLabel.Size = New System.Drawing.Size(64, 17)
         Me.TimenDateStatusLabel.Text = "SomeTime"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Location = New System.Drawing.Point(520, 27)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(268, 193)
+        Me.PictureBox1.TabIndex = 4
+        Me.PictureBox1.TabStop = False
+        '
         'QuietThermostat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -195,7 +186,6 @@ Partial Class QuietThermostat
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.TimeDateStatusStrip)
         Me.Controls.Add(Me.FanLabel)
-        Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.DILabel)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.TargetTempMeter)
@@ -209,9 +199,9 @@ Partial Class QuietThermostat
         Me.TopMenuStrip.ResumeLayout(False)
         Me.TopMenuStrip.PerformLayout()
         CType(Me.TargetTempMeter, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TimeDateStatusStrip.ResumeLayout(False)
         Me.TimeDateStatusStrip.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -233,7 +223,6 @@ Partial Class QuietThermostat
     Friend WithEvents TargetTempMeter As TrackBar
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents DILabel As Label
-    Friend WithEvents ListBox1 As ListBox
     Friend WithEvents FanLabel As Label
     Friend WithEvents TimeDateStatusStrip As StatusStrip
     Friend WithEvents TimenDateStatusLabel As ToolStripStatusLabel

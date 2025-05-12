@@ -71,11 +71,6 @@ Public Class QuietThermostat
         _bytes(2) = &H30
         ListBox1.Items.Clear()
         SerialPort.Write(_bytes, 0, 3)
-        'If incoming.Count > 0 Then
-        '    For i = 0 To incoming.Count - 1
-        '        ListBox1.Items.Add(incoming.Dequeue)
-        '    Next
-        'End If
 
         TimenDateStatusLabel.Text = DateTime.Now.ToString("yyyy MMMM d, h:mm")
 
@@ -104,6 +99,7 @@ Public Class QuietThermostat
             Dim found As Boolean = False
             DILabel.Text = $"Digital In: {value}"
 
+            'move this to the Q@ class and add all bits 
             Do      'this loop cheacks the digital inputs and fires teh corrolated action
 
                 If (value And 2) = 0 Then
@@ -120,6 +116,12 @@ Public Class QuietThermostat
                     FanLabel.Text = "Fan is OFF"
                 End If
 
+                If (value And 8) = 0 Then
+                    FanLabel.Text = "Atmospheric pressure has changed,
+you are dead."
+                    Exit Do
+                End If
+
                 If (value And 16) = 0 Then
                     PictureBox1.BackgroundImage = CType(My.Resources.ResourceManager.GetObject("AC"), Image)
                     Exit Do
@@ -128,7 +130,7 @@ Public Class QuietThermostat
                 End If
 
                 If (value And 1) = 0 Then
-                    FanLabel.Text = "saftey has tripped call technitian"
+                    FanLabel.Text = "Saftey has tripped call technitian."
                     Exit Do
                 End If
 
