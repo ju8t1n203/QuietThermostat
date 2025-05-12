@@ -1,7 +1,7 @@
 ﻿'Justin Bell
 'RCET 3371
 'Spring 2025
-' link
+' https://github.com/ju8t1n203/QuietThermostat
 Option Explicit On
 Option Strict On
 
