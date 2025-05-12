@@ -69,7 +69,6 @@ Public Class QuietThermostat
         _bytes(0) = &H51
         _bytes(1) = &H52
         _bytes(2) = &H30
-        ListBox1.Items.Clear()
         SerialPort.Write(_bytes, 0, 3)
 
         TimenDateStatusLabel.Text = DateTime.Now.ToString("yyyy MMMM d, h:mm")
@@ -90,7 +89,6 @@ Public Class QuietThermostat
             TargetTempMeter.Value = sT
         End If
 
-        Dim DI(7) As Boolean
         Dim value As Integer
 
         value = BasicQY.GetDigital(incoming)
@@ -99,8 +97,13 @@ Public Class QuietThermostat
             Dim found As Boolean = False
             DILabel.Text = $"Digital In: {value}"
 
-            'move this to the Q@ class and add all bits 
             Do      'this loop cheacks the digital inputs and fires teh corrolated action
+
+
+                If (value And 1) = 0 Then
+                    FanLabel.Text = "Saftey has tripped call technitian."
+                    Exit Do
+                End If
 
                 If (value And 2) = 0 Then
                     PictureBox1.BackgroundImage = CType(My.Resources.ResourceManager.GetObject("Heat"), Image)
@@ -129,10 +132,6 @@ you are dead."
                     PictureBox1.BackgroundImage = Nothing
                 End If
 
-                If (value And 1) = 0 Then
-                    FanLabel.Text = "Saftey has tripped call technitian."
-                    Exit Do
-                End If
 
                 Exit Do
             Loop
